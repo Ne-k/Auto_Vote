@@ -104,11 +104,12 @@ def vote():
 
 if __name__ == "__main__":
     processes = []
-    for _ in range(100):
+    for _ in range(100):  # number of instances
+        time.sleep(5)
         p = multiprocessing.Process(target=vote)
         p.start()
         processes.append(p)
-        time.sleep(7)
 
-        for p in processes:
-            p.join()
+    for p in processes:
+        p.join()
+
