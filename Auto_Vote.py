@@ -23,7 +23,7 @@ while True:
 
     driver = webdriver.Chrome()
 
-    driver.get("https://campustech.org/tech-the-halls?entry_id=6048a009-143c-42cc-98be-b312c45d5e73")
+    driver.get("<Your Voting page URL>")
 
     vote_button = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.ID, "vote_me"))
