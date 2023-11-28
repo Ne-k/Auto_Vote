@@ -8,7 +8,7 @@ headers = {
 payload = {
     "subject": "Verification Code Email",
     "type": "verificationCodeEmailConfigs",
-    "emailTo": ["username.lilrice@gmail.com"],
+    "emailTo": [""],
     "fields": {"[submitter_name]": "Weee"},
     "entry_id": "6048a009-143c-42cc-98be-b312c45d5e73"
 }
