@@ -29,7 +29,7 @@ def vote():
 
         driver = webdriver.Chrome(options=chrome_options)
 
-        driver.get("https://campustech.org/tech-the-halls?entry_id=d8a1c99d-3da3-4858-a75f-76bcfc547708")
+        driver.get("https://campustech.org/tech-the-halls?entry_id=6048a009-143c-42cc-98be-b312c45d5e73")
 
         vote_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.ID, "vote_me"))
@@ -42,9 +42,10 @@ def vote():
         s = requests.Session()
 
         agent = random.choice(user_agents)
+
         response = s.get(f'http://api.guerrillamail.com/ajax.php?f=get_email_address&ip=127.0.0.1&agent={agent}')
         data = json.loads(response.text)
-        email = data['email_addr']
+        email = data['email_addr']  # This is where the email is generated
 
         email_input = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "verification_email"))
@@ -104,7 +105,7 @@ def vote():
 
 if __name__ == "__main__":
     processes = []
-    for _ in range(10):  # number of instances
+    for _ in range(100):  # number of instances
         time.sleep(5)
         p = multiprocessing.Process(target=vote)
         p.start()
