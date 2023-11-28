@@ -6,14 +6,16 @@ headers = {
 
 }
 payload = {
-    "subject": "Verification Code Email",
+    "subject": "Your car's extended warranty",
     "type": "verificationCodeEmailConfigs",
     "emailTo": [""],
-    "fields": {"[submitter_name]": "Weee"},
+    "fields": {"[submitter_name]": "weee"},
     "entry_id": "6048a009-143c-42cc-98be-b312c45d5e73"
 }
 
-response = requests.post(url, headers=headers, data=json.dumps(payload))
 
-print(response.status_code)
-print(response.text)
+
+while(True): 
+  response = requests.post(url, headers=headers, data=json.dumps(payload))
+  print(response.status_code)
+  print(response.text)
